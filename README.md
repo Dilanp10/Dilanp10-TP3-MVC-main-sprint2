@@ -88,6 +88,6 @@ src/
 ---
 
 ### Autor
-Lucas Nieto
+Dilan Perea
 
 Este proyecto fue desarrollado como parte de un trabajo práctico para practicar el diseño de sistemas backend con Node.js y MongoDB.
