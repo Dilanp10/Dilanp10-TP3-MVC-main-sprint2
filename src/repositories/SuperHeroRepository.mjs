@@ -37,8 +37,11 @@ class SuperHeroRepository extends IRepository {
   }
 
   async actualizar(id, datos) {
-    return await SuperHero.findByIdAndUpdate(id, datos, { new: true }).exec();
-  }
+    return await SuperHero.findByIdAndUpdate(id, datos, {
+      new: true,         // Devuelve el documento actualizado
+      runValidators: true, // Fuerza las validaciones del esquema
+    }).exec();
+  }  
 
   async eliminar(id) {
     return await SuperHero.findByIdAndDelete(id).exec();
@@ -47,8 +50,6 @@ class SuperHeroRepository extends IRepository {
   async eliminarPorNombre(nombreSuperHeroe) {
     return await SuperHero.findOneAndDelete({ nombreSuperHeroe }).exec();
   }  
-
-
 }
 
 export default new SuperHeroRepository();
